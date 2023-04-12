@@ -20,6 +20,18 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    --
+    --
+    --
+    --
+    --
+    --
+    -- Custom Files Mapping
+    ["<leader>1"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle NeoTree" },
+    ["<leader>2"] = { "<cmd>Neotree reveal<cr>", desc = "Reveal NeoTree" },
+    ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
+    ["e"] = { function() require("telescope.builtin").oldfiles() end, desc = "Find history" },
+    ["q"] = { "<cmd>:bd<cr>", desc="Close Current Buffer"},
   },
   t = {
     -- setting a mapping to false will disable it
