@@ -21,17 +21,19 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     --
-    --
-    --
-    --
-    --
-    --
-    -- Custom Files Mapping
+    -- File Mappings
     ["<leader>1"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle NeoTree" },
     ["<leader>2"] = { "<cmd>Neotree reveal<cr>", desc = "Reveal NeoTree" },
     ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
+    ["<M-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
     ["e"] = { function() require("telescope.builtin").oldfiles() end, desc = "Find history" },
+    --
+    -- Buffer Mappings
     ["q"] = { "<cmd>:bd<cr>", desc="Close Current Buffer"},
+    ["<cr>"] = {
+      function() require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) vim.api.nvim_win_set_buf(0, bufnr) end) end,
+      desc = "Select buffer from tabline"
+    },
   },
   t = {
     -- setting a mapping to false will disable it
