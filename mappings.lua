@@ -34,9 +34,14 @@ return {
       function() require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) vim.api.nvim_win_set_buf(0, bufnr) end) end,
       desc = "Select buffer from tabline"
     },
+    --
+    -- Terminal
+    ["<leader>3"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" }
+    
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+    ["<leader>3"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" }
   },
 }
