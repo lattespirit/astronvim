@@ -36,7 +36,28 @@ return {
     },
     --
     -- Terminal
-    ["<leader>3"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" }
+    ["<leader>3"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+    
+    --
+    -- LSP
+    ["r"] = {
+      function()
+        local aerial_avail, _ = pcall(require, "aerial")
+        if aerial_avail then
+          require("telescope").extensions.aerial.aerial()
+        else
+          require("telescope.builtin").lsp_document_symbols()
+        end
+      end,
+      desc = "Search current document symbols",
+    },
+    
+    ["R"] = {
+      function()
+        require("telescope.builtin").lsp_workspace_symbols()
+      end,
+      desc = "Search global symbols",
+    }
     
   },
   t = {
