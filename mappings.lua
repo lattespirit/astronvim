@@ -11,7 +11,10 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
+          require("astronvim.utils.buffer").close(
+            bufnr)
+        end)
       end,
       desc = "Pick to close",
     },
@@ -20,7 +23,7 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-    
+
     --
     -- File Mappings
     ["<leader>1"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle NeoTree" },
@@ -28,19 +31,21 @@ return {
     ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
     ["<M-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
     ["e"] = { function() require("telescope.builtin").oldfiles() end, desc = "Find history" },
-
     --
     -- Buffer Mappings
-    ["q"] = { "<cmd>:bd<cr>", desc="Close Current Buffer"},
+    ["q"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
     ["<cr>"] = {
-      function() require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) vim.api.nvim_win_set_buf(0, bufnr) end) end,
+      function()
+        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
+          vim.api.nvim_win_set_buf(0,
+            bufnr)
+        end)
+      end,
       desc = "Select buffer from tabline"
     },
-
     --
     -- Terminal
     ["<leader>3"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
-    
     --
     -- LSP
     ["r"] = {
@@ -54,17 +59,15 @@ return {
       end,
       desc = "Search current document symbols",
     },
-    
     ["R"] = {
       function()
         require("telescope.builtin").lsp_workspace_symbols()
       end,
       desc = "Search global symbols",
     },
-
     -- Cursor
     --
-    
+
   },
   t = {
     -- setting a mapping to false will disable it
