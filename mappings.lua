@@ -65,13 +65,24 @@ return {
       end,
       desc = "Search global symbols",
     },
-    -- Cursor
+
+    -- Comment
     --
+    ["<BS>"] = {
+        function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
+        desc = "Comment line",
+    }
 
   },
+
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
     ["<leader>3"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" }
   },
+
+  v = {
+    ["<BS>"] =
+      { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", desc = "Toggle comment line" }
+  }
 }
