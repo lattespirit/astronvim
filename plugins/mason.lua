@@ -6,7 +6,7 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       ensure_installed = {
-        "lua_ls", "html", "cssls", "tsserver", "jsonls", "tailwindcss", "phpactor", "gopls"
+        "lua_ls", "html", "cssls", "tsserver", "jsonls", "tailwindcss", "intelephense", "gopls"
       },
     },
   },
