@@ -34,15 +34,8 @@ return {
     --
     -- Buffer Mappings
     ["q"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
-    ["<cr>"] = {
-      function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
-          vim.api.nvim_win_set_buf(0,
-            bufnr)
-        end)
-      end,
-      desc = "Select buffer from tabline"
-    },
+    ["<cr>"] = { function() require("telescope.builtin").buffers() end, desc = "Find buffers" },
+
     --
     -- Terminal
     ["<leader>3"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
