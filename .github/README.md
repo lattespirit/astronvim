@@ -1,6 +1,6 @@
-# AstroNvim User Configuration Example
+# Jeffrey Yeung's AstroNvim Configuration
 
-A user configuration template for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+Jeffrey Yeung's configuration template for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
 ## 🛠️ Installation
 
@@ -26,7 +26,7 @@ You can also just clone this repository directly if you do not want to track you
 #### Clone the repository
 
 ```shell
-git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim/lua/user
+git clone https://github.com/lattespirit/astronvim.git ~/.config/nvim/lua/user
 ```
 
 #### Start Neovim
