@@ -17,9 +17,9 @@ return {
     end,
   },
   {
-    "rebelot/kanagawa.nvim",
+    "folke/tokyonight.nvim",
     config = function()
-      require("kanagawa").setup {}
+      require("tokyonight").setup {}
     end,
   },
   {
